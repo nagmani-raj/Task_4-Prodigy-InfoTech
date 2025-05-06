@@ -1,0 +1,317 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background-color: white;
+    color: aliceblue;
+    overflow-x: hidden;
+    /* font-family: 'Poppins', scans-serif; */
+}
+
+
+.zoom-img {
+    width: 200px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.zoom-img:hover {
+    transform: scale(1.2);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    background-color: rgb(18, 18, 62);
+    transition: background 0.3s ease, color 0.3s ease;
+
+}
+
+.light-mode nav {
+    background-color: #ffffff;
+    color: black;
+}
+
+/* Dark Mode Navbar */
+.dark-mode nav {
+    background-color: rgb(18, 18, 62);
+    color: white;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0 23px;
+    padding-top: 10px;
+}
+
+nav ul li a {
+    position: relative;
+    text-decoration: none;
+    color: aliceblue;
+    padding-bottom: 5px;
+}
+
+nav ul li a:hover {
+    color: rgb(77, 77, 239);
+    font-size: 1.04rem;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(77, 77, 239);
+    transform: scaleX(0);  /* Initially hidden */
+    transform-origin: right;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+    
+    transform: scaleX(1);  /* Full width on hover */
+    transform-origin: left;
+}
+
+/* Menu Container */
+.menu-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Hamburger Icon */
+.hamburger-menu {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: rgba(0, 0, 33, 0.9);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+}
+
+/* Dropdown Button Styles */
+.dropdown-menu button {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    border: none;
+    background: none;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Hover Effect */
+.dropdown-menu button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Default Dark Mode */
+body {
+    background-color: rgb(0, 0, 33);
+    color: aliceblue;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Light Mode */
+.light-mode {
+    background-color: #f5f5f5;
+    color: black;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: rgb(0, 0, 33);
+    color: aliceblue;
+}
+
+
+main hr {
+    border: 0;
+    background: #9c97f1;
+    height: 1.2px;
+    margin: 60px 84px;
+}
+
+
+
+.left {
+    font-size: 1.5rem;
+    margin: 23px;
+
+}
+
+.firstSection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 110px 0;
+}
+
+.firstSection>div {
+    width: 30%;
+}
+
+.leftSection {
+    font-size: 2.2rem;
+}
+.leftSection .x {
+    padding-top: 28px;
+}
+
+.blur {
+    background: rgba(0, 0, 0, 0); /* Dark background for contrast */
+    backdrop-filter: blur(15px); /* Apply blur effect only on this section */
+    -webkit-backdrop-filter: blur(15px); /* Safari support */
+    z-index: 10;
+}
+
+.rightSection .img-box {
+    position: relative;
+    width: 32vw;
+    height: 32vw;
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+.rightSection .img-box::before,
+.rightSection .img-box::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: conic-gradient(transparent, transparent, transparent, #0241ef);
+    transform: rotate(0deg);
+    animation: rotate-border 10s linear infinite;
+}
+
+.rightSection .img-box::after {
+    animation-delay: -5s;
+}
+
+@keyframes rotate-border {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.rightSection .img-box .img-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 33);
+    transition: background-color 0.5s ease;
+    border-radius: 50%;
+    border: .1px solid rgb(0, 0, 33);
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.rightSection .img-box .img-item img {
+    position: absolute;
+    top: 30px;
+    display: block;
+    width: 75%;
+    object-fit: cover;
+    mix-blend-mode: lighten;
+}
+
+.purple {
+    color: blueviolet;
+}
+
+.text-grey {
+    color: grey;
+}
+
+#element {
+    color: blueviolet;
+}
+
+.secondSection {
+    max-width: 80vw;
+    margin: auto;
+}
+
+.secondSection {
+    font-size: 1.5rem;
+}
+
+.secondSection .box {
+    background: white;
+    width: 80vw;
+    height: 2px;
+    margin: 56px 0;
+}
+
+@keyframes twinkling {
+    0% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.3;
+    }
+}
+
+.star {
+    position: absolute;
+    background-color: white;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    animation: twinkling 1.5s infinite alternate;
+}
+
+
+.glow-btn {
+    background: rgba(0, 0, 0, 0);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    border-radius: 5px;
+  }
+  .glow-btn:hover {
+    box-shadow: 0 0 10px #00ffcc;
+    background-color: #112240;
+  }
